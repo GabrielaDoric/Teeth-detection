@@ -1,6 +1,6 @@
 # Object detection for stomatology problem
 
-Tensorflow 1.15 Object Detection API used. 
+Problem is solved by using Tensorflow 1.15 Object Detection API. https://github.com/tensorflow/models/tree/master/research/object_detection
 
 
 
