@@ -1,4 +1,4 @@
-# Object detection and instance segmentation solutions for stomatology problem. 
+# Object detection and instance segmentation solutions for stomatology problem
 
 Tensorflow 1.15 Object Detection API used. 
 
