@@ -26,77 +26,17 @@ flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
 flags.DEFINE_string('image_dir', '', 'Path to images')
 FLAGS = flags.FLAGS
 
+teeth_to_class_dict = {'11':1, '12':2, '13':3, '14':4, '15':5, '16':6, '17':7, '18':8,
+                       '21':9, '22':10, '23':11, '24':12, '25':13, '26':14, '27':15, '28':16,
+                       '31':17, '32':18, '33':19, '34':20, '35':21, '36':22, '37':23, '38':24,
+                       '41':25, '42':26, '43':27, '44':28, '45':29, '46':30, '47':31, '48':32,
+                       'IMPLANTAT':33}
 
-# TO-DO replace this with label map
 def class_text_to_int(row_label):
-    if row_label == 11:
-        return 1
-    elif row_label == 12:
-        return 2
-    elif row_label == 13:
-        return 3
-    elif row_label == 14:
-        return 4
-    elif row_label == 15:
-        return 5
-    elif row_label == 16:
-        return 6
-    elif row_label == 17:
-        return 7
-    elif row_label == 18:
-        return 8
-    elif row_label == 21:
-        return 9
-    elif row_label == 22:
-        return 10
-    elif row_label == 23:
-        return 11
-    elif row_label == 24:
-        return 12
-    elif row_label == 25:
-        return 13
-    elif row_label == 26:
-        return 14
-    elif row_label == 27:
-        return 15
-    elif row_label == 28:
-        return 16
-    elif row_label == 31:
-        return 17
-    elif row_label == 32:
-        return 18
-    elif row_label == 33:
-        return 19
-    elif row_label == 34:
-        return 20
-    elif row_label == 35:
-        return 21
-    elif row_label == 36:
-        return 22
-    elif row_label == 37:
-        return 23
-    elif row_label == 38:
-        return 24
-    elif row_label == 41:
-        return 25
-    elif row_label == 42:
-        return 26
-    elif row_label == 43:
-        return 27
-    elif row_label == 44:
-        return 28
-    elif row_label == 45:
-        return 29
-    elif row_label == 46:
-        return 30
-    elif row_label == 47:
-        return 31
-    elif row_label == 48:
-        return 32		
-    elif row_label == 'IMPLANTAT':
-        return 33    
-    else:
-        return 0
+        if row_label in teeth_to_class_dict:
+            return teeth_to_class_dict[row_label]
+        else:
+            return 0
 
 
 def split(df, group):
